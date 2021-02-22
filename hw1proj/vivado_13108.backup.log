@@ -1,0 +1,17 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Wed Feb 10 08:27:27 2021
+# Process ID: 13108
+# Current directory: C:/Users/horse/Documents/Xilinx_Projects/cmpe691/hw1proj
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent18828 C:\Users\horse\Documents\Xilinx_Projects\cmpe691\hw1proj\hw1proj.xpr
+# Log file: C:/Users/horse/Documents/Xilinx_Projects/cmpe691/hw1proj/vivado.log
+# Journal file: C:/Users/horse/Documents/Xilinx_Projects/cmpe691/hw1proj\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/horse/Documents/Xilinx_Projects/cmpe691/hw1proj/hw1proj.xpr
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+INFO: [Common 17-344] 'open_project' was cancelled
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed Feb 10 08:27:43 2021...

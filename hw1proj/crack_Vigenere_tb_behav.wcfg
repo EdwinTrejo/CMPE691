@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="crack_Vigenere_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="crack_Vigenere_tb" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="121569500fs"></ZoomStartTime>
+      <ZoomEndTime time="121956001fs"></ZoomEndTime>
+      <Cursor1Time time="122000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="246"></NameColumnWidth>
+      <ValueColumnWidth column_width="188"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="20" />
+   <wvobject fp_name="/crack_Vigenere_tb/input_data_file" type="array">
+      <obj_property name="ElementShortName">input_data_file[31:0]</obj_property>
+      <obj_property name="ObjectShortName">input_data_file[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/crack_Vigenere_tb/input_scan_file" type="array">
+      <obj_property name="ElementShortName">input_scan_file[31:0]</obj_property>
+      <obj_property name="ObjectShortName">input_scan_file[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/crack_Vigenere_tb/out_file" type="array">
+      <obj_property name="ElementShortName">out_file[31:0]</obj_property>
+      <obj_property name="ObjectShortName">out_file[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/crack_Vigenere_tb/line1" type="array">
+      <obj_property name="ElementShortName">line1[4:0][63:0]</obj_property>
+      <obj_property name="ObjectShortName">line1[4:0][63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/crack_Vigenere_tb/line2" type="array">
+      <obj_property name="ElementShortName">line2[4:0][63:0]</obj_property>
+      <obj_property name="ObjectShortName">line2[4:0][63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/crack_Vigenere_tb/line3" type="array">
+      <obj_property name="ElementShortName">line3[4:0][63:0]</obj_property>
+      <obj_property name="ObjectShortName">line3[4:0][63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/crack_Vigenere_tb/line4" type="array">
+      <obj_property name="ElementShortName">line4[4:0][63:0]</obj_property>
+      <obj_property name="ObjectShortName">line4[4:0][63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/crack_Vigenere_tb/line1_size" type="array">
+      <obj_property name="ElementShortName">line1_size[15:0]</obj_property>
+      <obj_property name="ObjectShortName">line1_size[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/crack_Vigenere_tb/line2_size" type="array">
+      <obj_property name="ElementShortName">line2_size[15:0]</obj_property>
+      <obj_property name="ObjectShortName">line2_size[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/crack_Vigenere_tb/i" type="array">
+      <obj_property name="ElementShortName">i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/crack_Vigenere_tb/key" type="array">
+      <obj_property name="ElementShortName">key[639:0]</obj_property>
+      <obj_property name="ObjectShortName">key[639:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/crack_Vigenere_tb/start" type="logic">
+      <obj_property name="ElementShortName">start</obj_property>
+      <obj_property name="ObjectShortName">start</obj_property>
+   </wvobject>
+   <wvobject fp_name="/crack_Vigenere_tb/done" type="logic">
+      <obj_property name="ElementShortName">done</obj_property>
+      <obj_property name="ObjectShortName">done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/crack_Vigenere_tb/crack_Vigenere_uut/key1" type="array">
+      <obj_property name="ElementShortName">key1[39:0][7:0]</obj_property>
+      <obj_property name="ObjectShortName">key1[39:0][7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/crack_Vigenere_tb/crack_Vigenere_uut/key2" type="array">
+      <obj_property name="ElementShortName">key2[39:0][7:0]</obj_property>
+      <obj_property name="ObjectShortName">key2[39:0][7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/crack_Vigenere_tb/crack_Vigenere_uut/key1len" type="array">
+      <obj_property name="ElementShortName">key1len[7:0]</obj_property>
+      <obj_property name="ObjectShortName">key1len[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/crack_Vigenere_tb/crack_Vigenere_uut/key2len" type="array">
+      <obj_property name="ElementShortName">key2len[7:0]</obj_property>
+      <obj_property name="ObjectShortName">key2len[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/crack_Vigenere_tb/crack_Vigenere_uut/key_finder_counter" type="array">
+      <obj_property name="ElementShortName">key_finder_counter[7:0]</obj_property>
+      <obj_property name="ObjectShortName">key_finder_counter[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/crack_Vigenere_tb/crack_Vigenere_uut/return_key" type="array">
+      <obj_property name="ElementShortName">return_key[39:0][7:0]</obj_property>
+      <obj_property name="ObjectShortName">return_key[39:0][7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/crack_Vigenere_tb/key" type="array">
+      <obj_property name="ElementShortName">key[639:0]</obj_property>
+      <obj_property name="ObjectShortName">key[639:0]</obj_property>
+   </wvobject>
+</wave_config>

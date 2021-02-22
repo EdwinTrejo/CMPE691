@@ -1,0 +1,14 @@
+# https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#_ignoring
+
+#visual studio and visual studio code
+**/bin/
+**/.vs/
+**/Debug/
+
+#vivado
+**/*.jobs/
+**/*.cache/
+**/*.runs/
+**/*.ip_user_files/
+**/*.hw/
+**/*.sim/sim_1/
