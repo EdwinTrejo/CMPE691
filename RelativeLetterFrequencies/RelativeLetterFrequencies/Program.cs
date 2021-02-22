@@ -1,4 +1,5 @@
 ﻿using System;
+//using uint8_t = System.Uint8_t;
 using uint8_t = System.Byte;
 
 namespace RelativeLetterFrequencies
@@ -39,10 +40,32 @@ namespace RelativeLetterFrequencies
 
         static void Main(string[] args)
         {
-            uint8_t[] decrypt_string_frequencies =  new uint8_t[26];
+            uint8_t[] decrypt_string_frequencies = new uint8_t[26];
             uint8_t[] copy_string = new uint8_t[decrypt_string.Length];
 
             Console.WriteLine("Hello World!");
+
+            for (int i = 0; i < decrypt_string.Length; i++)
+            {
+                uint8_t current_char = Convert.ToByte(decrypt_string[i]);
+                uint8_t biga = Convert.ToByte('A');
+                uint8_t smalla = Convert.ToByte('a');
+
+                if (current_char >= 65 && current_char <= 90)
+                {
+                    copy_string[i] = Convert.ToByte(current_char - biga);
+                    decrypt_string_frequencies[current_char - 65]++;
+                }
+                else if (current_char >= 97 && current_char <= 122)
+                {
+                    copy_string[i] = Convert.ToByte(current_char - smalla);
+                    decrypt_string_frequencies[current_char - (uint8_t)97]++;
+                }
+                else
+                {
+                    copy_string[i] = (uint8_t)current_char;
+                }
+            }
         }
     }
 }
