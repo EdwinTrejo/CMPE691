@@ -9,29 +9,33 @@
   },
   "packageFolders": {
     "C:\\Users\\horse\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\horse\\Documents\\repos\\CMPE691\\RelativeLetterFrequencies\\RelativeLetterFrequencies\\RelativeLetterFrequencies.csproj",
+      "projectUniqueName": "F:\\repos\\CMPE691\\RelativeLetterFrequencies\\RelativeLetterFrequencies\\RelativeLetterFrequencies.csproj",
       "projectName": "RelativeLetterFrequencies",
-      "projectPath": "C:\\Users\\horse\\Documents\\repos\\CMPE691\\RelativeLetterFrequencies\\RelativeLetterFrequencies\\RelativeLetterFrequencies.csproj",
+      "projectPath": "F:\\repos\\CMPE691\\RelativeLetterFrequencies\\RelativeLetterFrequencies\\RelativeLetterFrequencies.csproj",
       "packagesPath": "C:\\Users\\horse\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\horse\\Documents\\repos\\CMPE691\\RelativeLetterFrequencies\\RelativeLetterFrequencies\\obj\\",
+      "outputPath": "F:\\repos\\CMPE691\\RelativeLetterFrequencies\\RelativeLetterFrequencies\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
         "C:\\Users\\horse\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Users\\horse\\source\\repos\\RHR\\RHR_FRAMEWORK\\bin\\Debug": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
