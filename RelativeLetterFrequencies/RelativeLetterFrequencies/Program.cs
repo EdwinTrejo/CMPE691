@@ -68,10 +68,21 @@ namespace RelativeLetterFrequencies
         const uint8_t MAX_CHARS = 25;
         const uint8_t MAX_STRINGS = 6;
 
-        const string decrypt_string = "iq iuxx yqqf uz ftq yuppxq ar ftq xundmdk mf zaaz mxx mddmzsqyqzfe mdq ympq";
 
         static void Main(string[] args)
         {
+            string decrypt_string = "iq iuxx yqqf uz ftq yuppxq ar ftq xundmdk mf zaaz mxx mddmzsqyqzfe mdq ympq";
+            //
+
+            Console.Write($"Enter String to Decrypt or press enter to use the following example\n\t{decrypt_string}\n:\t");
+
+            string getnewtext = Console.ReadLine();
+
+            if (!string.IsNullOrEmpty(getnewtext.Trim()))
+            {
+                decrypt_string = getnewtext.Trim();
+            }
+
             int countable_numbers = 0;
             uint8_t[] decrypt_string_frequencies = new uint8_t[26];
             uint8_t[] copy_string = new uint8_t[decrypt_string.Length];
