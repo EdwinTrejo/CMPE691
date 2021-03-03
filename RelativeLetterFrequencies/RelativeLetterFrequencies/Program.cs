@@ -215,6 +215,8 @@ namespace RelativeLetterFrequencies
                 Console.WriteLine();
                 counter++;
             }
+
+            Console.ReadKey();
         }
 
         public static uint8_t Convert(int num)
