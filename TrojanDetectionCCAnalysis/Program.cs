@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace TrojanDetectionCCAnalysis
@@ -11,9 +13,10 @@ namespace TrojanDetectionCCAnalysis
     {
         public static void Main(string[] args)
         {
+            Console.WriteLine(@"ex. G:\My Drive\CMPE 491\HW4\out.txt");
             Console.Write("Enter result file filepath\n:  ");
-            //string filepath = Console.ReadLine();
-            string filepath = @"G:\My Drive\CMPE 691\hw4\HW4\out.txt";
+            string filepath = Console.ReadLine();
+            //G:\My Drive\CMPE 691\hw4\HW4\out.txt
 
             if (!File.Exists(filepath))
             {
@@ -23,7 +26,7 @@ namespace TrojanDetectionCCAnalysis
             // G:\My Drive\CMPE 691\hw4\HW4\out.txt
             string whole_file_text = File.ReadAllText(filepath);
 
-            List<SingleReportItem> moduleReports = new List<SingleReportItem>();
+            List<SingleModuleReport> moduleReports = new List<SingleModuleReport>();
             List<string> file_lines = whole_file_text.Split('\n').ToList();
             bool inside_module = false;
 
@@ -44,11 +47,11 @@ namespace TrojanDetectionCCAnalysis
                     )
                 {
 
-
                     //check if is a new module
                     if (inside_module & string_items == 4)
                     {
                         inside_module = false;
+                        moduleReports.Add(new_report);
                     }
 
                     if (!inside_module & string_items == 4)
@@ -90,13 +93,32 @@ namespace TrojanDetectionCCAnalysis
                         newSingleReport.sequential_stability_parameters = line_parts[3].Trim();
                         newSingleReport.connected_net = line_parts[4].Trim();
 
-                        moduleReports.Add(new SingleReportItem() { moduleReport = new_report, singleReport = newSingleReport });
+                        new_report.single_reports.Add(newSingleReport);
                     }
                 }
             }
 
+            List<SingleReportItem> compare_results = new List<SingleReportItem>();
+            foreach(SingleModuleReport moduleReport in moduleReports)
+            {
+                double sum_up_CCS = 0;
+                int sum_CC0 = 0;
+                int sum_CC1 = 0;
 
-            int itemsfound = moduleReports.Count;
+                foreach (SingleReport singleReport in moduleReport.single_reports)
+                {
+                    sum_up_CCS += singleReport.controllability.CCS;
+                    sum_CC0 += singleReport.controllability.CC0;
+                    sum_CC1 += singleReport.controllability.CC1;
+                }
+
+                double recalculated_sum_CCS = Math.Sqrt(Math.Pow(sum_CC0, 2) + Math.Pow(sum_CC1, 2));
+
+                compare_results.Add(new SingleReportItem(moduleReport, recalculated_sum_CCS) { CCS_sum_add = sum_up_CCS});
+            }
+
+
+            int itemsfound = compare_results.Count;
 
             int number_of_items_wanted = 30;
 
@@ -110,11 +132,11 @@ namespace TrojanDetectionCCAnalysis
             //outer one just puts into array
             for (int i = 0; i < number_of_items_wanted; i++)
             {
-                if (i > 0) last_round_big = top_module_reports[i - 1].singleReport.controllability.CCS;
+                if (i > 0) last_round_big = top_module_reports[i - 1].CCS_sum;
                 round_big = 0;
-                SingleReportItem current_big_report = new SingleReportItem();
+                top_module_reports[i] = new SingleReportItem();
 
-                foreach (SingleReportItem report in moduleReports)
+                foreach (SingleReportItem report in compare_results)
                 {
                     bool skip = false;
                     for (int j = 0; j < i; j++)
@@ -126,25 +148,69 @@ namespace TrojanDetectionCCAnalysis
                     }
                     if (!skip)
                     {
-                        double current_CCS = report.singleReport.controllability.CCS;
+                        double current_CCS = report.CCS_sum;
                         if ((current_CCS < last_round_big) & (current_CCS > round_big))
                         {
                             round_big = current_CCS;
-                            current_big_report = report;
+                            top_module_reports[i].moduleReport = report.moduleReport;
+                            top_module_reports[i].CCS_sum = current_CCS;
                         }
                     }
                 }
-                top_module_reports[i] = current_big_report;
             }
 
-            string output_filename = "top_likely_trojans";
+            string current_dir = Directory.GetCurrentDirectory();
+            string output_filepath = $@"{current_dir}\top_likely_trojans.json";
+            string full_output_filepath = $@"{current_dir}\full_program_output.json";
+
+            var create_file = File.Create(output_filepath);
+            create_file.Close();
+
+            var create_file2 = File.Create(full_output_filepath);
+            create_file2.Close();
+
+            string pretty_full_report = PrettyJson(JsonConvert.SerializeObject(moduleReports));
+            string pretty_top_report = PrettyJson(JsonConvert.SerializeObject(top_module_reports));
+
+            File.WriteAllText(full_output_filepath, pretty_full_report);
+            File.WriteAllText(output_filepath, pretty_top_report);
+        }
+
+        public static string PrettyJson(string unPrettyJson)
+        {
+            var options = new JsonSerializerOptions()
+            {
+                WriteIndented = true
+            };
+
+            var jsonElement = System.Text.Json.JsonSerializer.Deserialize<JsonElement>(unPrettyJson);
+
+            return System.Text.Json.JsonSerializer.Serialize(jsonElement, options);
         }
     }
 
     public class SingleReportItem
     {
+        [JsonProperty("module_info")]
         public SingleModuleReport moduleReport;
-        public SingleReport singleReport;
+        
+        [JsonProperty("ccs_sum_value")]
+        public double CCS_sum;        
+
+        [JsonIgnore]
+        public double CCS_sum_add;
+
+        public SingleReportItem()
+        {
+            this.moduleReport = new SingleModuleReport();
+            this.CCS_sum = 0;
+        }
+
+        public SingleReportItem(SingleModuleReport moduleReport, double CCS_sum)
+        {
+            this.moduleReport = moduleReport;
+            this.CCS_sum = CCS_sum;
+        }
     }
 
     public class SingleModuleReport
@@ -153,16 +219,20 @@ namespace TrojanDetectionCCAnalysis
         public string module_number;
         public string description;
         public string gate_primitive;
-        //public List<SingleReport> single_reports = new List<SingleReport>();
+
+        [JsonProperty("signal_level_report")]
+        public List<SingleReport> single_reports = new List<SingleReport>();
     }
 
     public class SingleReport
     {
         public string pin_name;
         public string pin_type;
-        public Controllability controllability;
-        public string sequential_stability_parameters;
         public string connected_net;
+        public Controllability controllability;
+
+        [JsonIgnore]
+        public string sequential_stability_parameters;
     }
 
     public class Controllability
