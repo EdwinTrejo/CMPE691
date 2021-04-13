@@ -1,0 +1,29 @@
+﻿FaultFreeCiphertext
+f6 21 5a c5
+b1 ec cb 1c
+08 ba cc 48
+c1 13 37 d1
+
+FirstFaultyCiphertext
+5d ba 6b 68
+af 4d 04 1d
+71 95 2b 7e
+d4 5f 7d 13
+
+SecondFaultyCiphertext
+f0 c7 70 ce
+29 38 e7 dc
+73 1f b0 d1
+46 44 ec 87
+
+ThirdFaultyCiphertext
+81 5f 8f 56
+e9 d4 bf 8a
+dd 40 39 bf
+f2 d6 0d 97
+
+InputPlaintext
+ff ff ff ff
+ff ff ff ff
+ff ff ff ff
+ff ff ff ff
