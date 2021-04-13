@@ -109,6 +109,7 @@ namespace DFAAES
                 }
                 Console.Write("\r\n");
             }
+            Console.WriteLine();
         }
 
         public static byte StringToByte(string str_byte)

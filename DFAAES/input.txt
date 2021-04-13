@@ -22,7 +22,7 @@ e9 d4 bf 8a
 dd 40 39 bf
 f2 d6 0d 97
 
-InputPlaintext
+Inputplaintext
 ff ff ff ff
 ff ff ff ff
 ff ff ff ff
