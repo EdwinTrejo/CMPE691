@@ -4,6 +4,7 @@
 **/bin/
 **/.vs/
 **/Debug/
+**/obj/
 
 #vivado
 **/*.jobs/

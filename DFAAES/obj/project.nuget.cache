@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "1onsGODuZMggBkBpVXWb5qbsYHeRBfjxl0EQqUA80NDXrGQjPczwLSKqWEOfiVCyPrKPi/a42Qetw6/XrxpUDQ==",
+  "dgSpecHash": "mZVu2iwcI5Uww6nGT+EvnYYLI04k9KBj/pE+A4vkrZNgZ5izhrIlzANf+D9IILyESXeqcs78Oh1c0EOgnIKXrg==",
   "success": true,
   "projectFilePath": "F:\\repos\\CMPE691\\DFAAES\\DFAAES.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\horse\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
   "logs": []
 }
