@@ -7,7 +7,7 @@
 
 1. hw1proj
 
->  **VERILOG** Vigenere Encryption / Decryption / Cracking
+>  **Verilog** Vigenere Encryption / Decryption / Cracking
 
 2. hardwaresecurity1
 
@@ -19,7 +19,7 @@
 
 4. AESEncryption
 
->  **VERILOG** Vivado project that performs AES Encryption
+>  **Verilog** Vivado project that performs AES Encryption
 
 5. DFAAES
 
@@ -34,7 +34,8 @@
 >  **C#** Trojan Detection and Analysis (Hardware trojan detection)
 
 8. CMPE491_HW7_MODELSIM
- 
+
+>  **Verilog VHDL** AES Concurrent Error Detection (CED)
 
 ## Git Description
 
