@@ -17,6 +17,21 @@
 
 >  **C#** Vigenere Cracking Statistical Attack
 
+4. AESEncryption
+
+>  **VERILOG** Vivado project that performs AES Encryption
+
+5. DFAAES
+
+>  **C#** Giraud Differential Fault Attack program
+
+6. EuclideanAlgorithmCalculator
+
+>  **C++** Extended Eucledian Algorithm
+
+7. TrojanDetectionCCAnalysis
+
+>  **C#** Trojan Detection and Analysis (Hardware trojan detection)
  
 
 ## Git Description
