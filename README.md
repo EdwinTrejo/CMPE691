@@ -32,6 +32,8 @@
 7. TrojanDetectionCCAnalysis
 
 >  **C#** Trojan Detection and Analysis (Hardware trojan detection)
+
+8. CMPE491_HW7_MODELSIM
  
 
 ## Git Description
