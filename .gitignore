@@ -13,3 +13,10 @@
 **/*.ip_user_files/
 **/*.hw/
 **/*.sim/sim_1/
+
+#modelsim
+**/_lib*.qdb
+**/_lib*.qtl
+**/_lib*.qpg
+**/_info
+**/_vmake
